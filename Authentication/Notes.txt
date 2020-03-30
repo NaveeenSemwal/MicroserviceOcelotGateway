@@ -1,0 +1,5 @@
+﻿Installed Swashbuckle.AspNetCore 5.0.0
+
+
+A Dockerfile must be created with no extension. To do this in Windows,
+create the file with your editor of choice, then save it with the notation "Dockerfile" (including the quotes).

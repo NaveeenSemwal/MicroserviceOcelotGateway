@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/APIGateway/bin/Debug/netcoreapp3.1
+/APIGateway/obj
+/TweetBook.IntegrationTesting/bin/Debug/netcoreapp3.1
+/TweetBook.IntegrationTesting/obj
+/.vs/TweetBookManagement
+/OcelotAPIGateway/bin/Debug/netcoreapp3.1
+/OcelotAPIGateway/obj
