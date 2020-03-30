@@ -13,6 +13,9 @@ using Ocelot.Middleware;
 
 namespace OcelotAPIGateway
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
         public void ConfigureServices(IServiceCollection services)
