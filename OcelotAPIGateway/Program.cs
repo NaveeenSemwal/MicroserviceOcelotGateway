@@ -11,6 +11,10 @@ namespace OcelotAPIGateway
 {
     public class Program
     {
+        /// <summary>
+        /// This is API  gateway
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
