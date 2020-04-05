@@ -22,7 +22,7 @@ namespace TweetBook.Installers
             configuration.Bind(nameof(jwtSettings), jwtSettings);
 
             //services.AddSingleton(jwtSettings);
-            
+
 
             var tokenValidationParameter = new TokenValidationParameters
             {
@@ -35,7 +35,7 @@ namespace TweetBook.Installers
 
             };
             // Added this to singleton  to access in IdentityService.GetPrincipalFromToken class.
-          //  services.AddSingleton(tokenValidationParameter);
+            //  services.AddSingleton(tokenValidationParameter);
 
             services.AddAuthentication(configureOptions =>
             {
@@ -47,7 +47,7 @@ namespace TweetBook.Installers
 
                 .AddJwtBearer(configureOptions =>
                 {
-                    configureOptions.SaveToken = true;
+                    configureOptions.RequireHttpsMetadata = false;
                     configureOptions.TokenValidationParameters = tokenValidationParameter;
                 });  // Added JWT Authentication end here.
 

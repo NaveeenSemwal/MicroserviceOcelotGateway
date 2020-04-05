@@ -9,3 +9,6 @@
 /.vs/TweetBookManagement
 /OcelotAPIGateway/bin/Debug/netcoreapp3.1
 /OcelotAPIGateway/obj
+/ClientApp/.vs/ClientApp
+/ClientApp/bin/Debug/netcoreapp3.1
+/ClientApp/obj
