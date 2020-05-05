@@ -29,6 +29,19 @@
       "UpstreamPathTemplate": "/v1/Login",
       "UpstreamHttpMethod": [ "POST" ],
       "ReRouteIsCaseSensitive": false
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/Register",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/v1/Register",
+      "UpstreamHttpMethod": [ "POST" ],
+      "ReRouteIsCaseSensitive": false
     }
   ]
 }

@@ -26,6 +26,12 @@
   </ItemGroup>
 
 
+  <ItemGroup>
+    <Folder Include="Contracts\V2\" />
+    <Folder Include="Controllers\V2\" />
+  </ItemGroup>
+
+
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>

@@ -11,8 +11,13 @@ namespace TweetBook.IntegrationTesting
 {
     public class PostControllerTest : IntegrationTest
     {
-        public PostControllerTest(CustomWebApplicationFactory<Startup> factory) : base(factory)
+        protected readonly HttpClient _postClient;
+        readonly CustomWebApplicationFactory<TweetBook.Startup> factory;
+
+        public PostControllerTest()
         {
+            factory = new CustomWebApplicationFactory<TweetBook.Startup>();
+            _postClient = factory.CreateClient();
         }
 
         [Fact]
@@ -20,14 +25,16 @@ namespace TweetBook.IntegrationTesting
         {
             //Arrange
             await AuthenticateAsync();
+            _postClient.DefaultRequestHeaders.Authorization = _authClient.DefaultRequestHeaders.Authorization;
 
             // Act
             string url = ApiRoutes.ControllerRoute + "/" + ApiRoutes.Posts.GetAll;
-            var response = await TestClient.GetAsync(url);
+            var response = await _postClient.GetAsync(url);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
-            (await response.Content.ReadAsAsync<List<Post>>()).Should().BeEmpty();
+            var posts = await response.Content.ReadAsAsync<List<Post>>();
+            (posts).Should().NotBeNullOrEmpty();
         }
     }
 }

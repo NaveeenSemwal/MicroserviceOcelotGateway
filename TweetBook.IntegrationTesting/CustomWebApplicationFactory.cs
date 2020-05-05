@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
-using TweetBook.Data;
+using AuthenticationService.Data;
 
 namespace TweetBook.IntegrationTesting
 {
@@ -54,7 +54,7 @@ namespace TweetBook.IntegrationTesting
                     try
                     {
                         // Seed the database with test data.
-                       // Utilities.InitializeDbForTests(db);
+                       Utilities.InitializeDbForTests(db);
                     }
                     catch (Exception ex)
                     {

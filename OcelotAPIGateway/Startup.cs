@@ -17,7 +17,7 @@ using Ocelot.Middleware;
 namespace OcelotAPIGateway
 {
     /// <summary>
-    /// 
+    /// https://docs.microsoft.com/en-us/dotnet/architecture/microservices/multi-container-microservice-net-applications/implement-api-gateways-with-ocelot
     /// </summary>
     public class Startup
     {
