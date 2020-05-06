@@ -12,3 +12,5 @@
 /ClientApp/.vs/ClientApp
 /ClientApp/bin/Debug/netcoreapp3.1
 /ClientApp/obj
+/TweetBook.Utilities/bin/Debug/netcoreapp3.1
+/TweetBook.Utilities/obj

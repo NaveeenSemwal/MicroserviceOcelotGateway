@@ -9,6 +9,7 @@ using System.Text;
 using AuthenticationService.Options;
 using AuthenticationService.Services.Abstract;
 using AuthenticationService.Services.Implementation;
+using TweetBook.Utilities;
 
 namespace AuthenticationService.Installers
 {
@@ -23,6 +24,8 @@ namespace AuthenticationService.Installers
 
             services.AddSingleton(jwtSettings);
             services.AddScoped<IIdentityService, IdentityService>();
+
+            services.AddScoped<ILog, LoggerService>();
 
 
             var tokenValidationParameter = new TokenValidationParameters

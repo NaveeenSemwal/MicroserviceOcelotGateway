@@ -16,6 +16,8 @@ using AuthenticationService.Options;
 using Microsoft.OpenApi.Models;
 using AuthenticationService.Installers;
 using System.Reflection;
+using NLog;
+using System.IO;
 
 namespace AuthenticationService
 {
@@ -23,6 +25,7 @@ namespace AuthenticationService
     {
         public Startup(IConfiguration configuration)
         {
+            LogManager.LoadConfiguration(System.String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
         }
 

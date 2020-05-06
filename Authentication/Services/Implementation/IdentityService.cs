@@ -12,6 +12,7 @@ using AuthenticationService.Data;
 using AuthenticationService.Domain;
 using AuthenticationService.Options;
 using AuthenticationService.Services.Abstract;
+using TweetBook.Utilities;
 
 namespace AuthenticationService.Services.Implementation
 {
@@ -21,14 +22,16 @@ namespace AuthenticationService.Services.Implementation
         private readonly ApplicationDbContext _dbContext;
         private readonly JwtSettings _jwtSettings;
         private readonly TokenValidationParameters _validationParameters;
+        private readonly ILog _log;
 
         public IdentityService(UserManager<IdentityUser> userManager, ApplicationDbContext dbContext,
-            JwtSettings jwtSettings, TokenValidationParameters validationParameters)
+            JwtSettings jwtSettings, TokenValidationParameters validationParameters, ILog log)
         {
             _userManager = userManager;
             _dbContext = dbContext;
             _jwtSettings = jwtSettings;
             _validationParameters = validationParameters;
+            _log = log;
         }
 
         public async Task<AuthenticationResult> LoginAsync(string email, string password)
@@ -42,6 +45,7 @@ namespace AuthenticationService.Services.Implementation
                     Errors = new[] { "User doesnot exists." }
                 };
             }
+            _log.LogInfo("User exists !");
 
             var userHasValidPassword = await _userManager.CheckPasswordAsync(user, password).ConfigureAwait(false); ;
 
